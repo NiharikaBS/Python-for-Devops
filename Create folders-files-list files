@@ -1,0 +1,29 @@
+import os
+
+def create_folders_and_files(folder_paths):
+    for folder_path in folder_paths:
+        os.makedirs(folder_path, exist_ok=True)
+        with open(os.path.join(folder_path, "file1.txt"), "w") as file:
+            file.write("This is file1 in " + folder_path)
+        with open(os.path.join(folder_path, "file2.txt"), "w") as file:
+            file.write("This is file2 in " + folder_path)
+
+def list_files_in_folder(folder_path):
+    files = os.listdir(folder_path)
+    return files
+
+def main():
+    folder_paths = input("Enter a list of folder paths separated by spaces: ").split()
+    
+    # Create folders and files
+    create_folders_and_files(folder_paths)
+
+    # List files in each folder
+    for folder_path in folder_paths:
+        files = list_files_in_folder(folder_path)
+        print(f"Files in {folder_path}:")
+        for file in files:
+            print(file)
+
+if __name__ == "__main__":
+    main()
