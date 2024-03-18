@@ -1,0 +1,16 @@
+import os
+
+def create_folders_files(folder_names):
+    for folder_name in folder_names:
+        os.makedirs(folder_name)
+        with open(os.path.join(folder_name, "file1.txt"), "w") as file1:
+            file1.write("write the content here for file 1")
+        with open(os.path.join(folder_name, "file2.txt"), "w") as file2:
+            file2.write("write the content here for file 2")
+
+def main():
+        folder_names = input("enter folder names with sapces: ").split()
+        create_folders_files(folder_names)
+
+if __name__ == "__main__":
+    main()
