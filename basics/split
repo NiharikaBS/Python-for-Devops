@@ -1,0 +1,6 @@
+#Splits the last log entry by spaces and extracts the last word (e.g., 'failed' or 'success')
+
+Jenkins_log = "Build started at 2024-11-06 10:20:30, Step 1 success, Step 2 failed"
+log_parts = Jenkins_log.split(",")
+build_status = log_parts[-1].split( )[-1]
+print("Build status:", build_status )
