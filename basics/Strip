@@ -1,0 +1,3 @@
+env_var = "   DATABASE_URL=postgres://localhost   "
+cleaned_env_var = env_var.strip()
+print(cleaned_env_var)
